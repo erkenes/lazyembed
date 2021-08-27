@@ -1,6 +1,6 @@
 {
-  "name": "lazyembed2",
-  "version": "1.1.7",
+  "name": "@eneserk/lazyembed",
+  "version": "1.2.0",
   "description": "A library for loading embeds and individual content on click",
   "main": "src/lazyembed.js",
   "scripts": {
@@ -40,5 +40,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "merge-stream": "^1.0.1"
-  }
+  },
+  "dependencies": {}
 }
