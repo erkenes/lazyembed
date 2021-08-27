@@ -6,6 +6,7 @@ const LazyEmbed = (() => {
         // !!! DEPRECATED !!! overlayColor: '#fff',
         adoptResponsiveEmbed: true,
         excludeElements: 'a',
+        includeElements: null,
         classes: {
             root: 'lazyembed',
             overlay: 'lazyembed__overlay',
@@ -127,6 +128,12 @@ const LazyEmbed = (() => {
                 const overlayExcludes = overlay.querySelectorAll(this.options.excludeElements);
                 for (let u = 0; u < overlayExcludes.length; u++) {
                     overlayExcludes[u].addEventListener('click', e => {
+                        if (this.options.includeElements) {
+                            if (e.target.matches(this.options.includeElements)) {
+                                return ;
+                            }
+                        }
+
                         e.stopPropagation();
                     }, false);
                 }

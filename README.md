@@ -76,6 +76,7 @@ Option | Type | Required | Default | Description
 `overlayColor` | `string` | No | - | **_DEPRECATED_** The overlay's text color. Can be any CSS color.
 `adoptResponsiveEmbed` | `bool` | Yes | `true` | If set to `true`, LazyEmbed tries to adept [Bootstrap's `embed-responsive` class](https://getbootstrap.com/docs/4.1/utilities/embed/) from the embed element.
 `excludeElements` | `string` | Yes | `'a'` | A selector defining child elements of the overlay which should not trigger loading the embed content. For example one would not want to trigger the loading when clicking on a link to the privacy policy.
+`includeElements` | `string` | no | `null` | A selector defining child elements inside the `excludeElements`-Selector which should trigger the embed content.
 `classes.root` | `string` | Yes | `'lazyembed'` | The class to apply to the outermost LazyEmbed element wrapped around the embed element. When not applying the default class, you have to adjust the CSS.
 `classes.overlay` | `string` | Yes | `'lazyembed__overlay'` | The class to apply to the overlay element. When not applying the default class, you have to adjust the CSS.
 `classes.text` | `string` | Yes | `'lazyembed__text'` | The class to apply to the overlay text element. When not applying the default class, you have to adjust the CSS.

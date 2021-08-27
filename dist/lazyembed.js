@@ -10,6 +10,7 @@ var LazyEmbed = function () {
         // !!! DEPRECATED !!! overlayColor: '#fff',
         adoptResponsiveEmbed: true,
         excludeElements: 'a',
+        includeElements: null,
         classes: {
             root: 'lazyembed',
             overlay: 'lazyembed__overlay',
@@ -133,6 +134,12 @@ var LazyEmbed = function () {
                     var overlayExcludes = overlay.querySelectorAll(_this.options.excludeElements);
                     for (var u = 0; u < overlayExcludes.length; u++) {
                         overlayExcludes[u].addEventListener('click', function (e) {
+                            if (_this.options.includeElements) {
+                                if (e.target.matches(_this.options.includeElements)) {
+                                    return;
+                                }
+                            }
+
                             e.stopPropagation();
                         }, false);
                     }
